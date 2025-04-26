@@ -51,7 +51,9 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/Angular-CRUD2-/products"
+
             },
             "development": {
               "optimization": false,
