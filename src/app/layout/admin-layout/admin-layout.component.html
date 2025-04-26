@@ -1,0 +1,29 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>
+      <img src="https://scontent.flim9-1.fna.fbcdn.net/v/t39.30808-6/363418056_6369748059789489_6761185321515821762_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFT-p5CsA99uCwt19ywHmkBnX5odlJvIWqdfmh2Um8haqJZy-2XKoFlhqBB4lm_Wblh2QReSWZd-4TBtrUr4iu7&_nc_ohc=R4t1Bde6QS8Q7kNvwHDHMP8&_nc_oc=AdntOPET91MWZbPNHgQs3OKPLqZEGT0fuFDW2XkTdaxJv7Sd_X64_u2TI3f3D_MT3Dk&_nc_zt=23&_nc_ht=scontent.flim9-1.fna&_nc_gid=REYniD78TcBlDlAB1v8nyw&oh=00_AfF_Zpc4B6l7yc2JW2Xj6Qa8ECnPCp3-uq1_gInhzDCVjg&oe=68120DAD" alt="Logo" height="90">
+    </mat-toolbar>
+    <mat-nav-list style="padding: 1rem;">
+      <a mat-list-item routerLink="products" routerLinkActive #link="routerLinkActive" [activated]="link.isActive">
+        Productos
+      </a>
+      <a mat-list-item routerLink="">Clientes</a>
+      <a mat-list-item routerLink="">Ventas</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      @if (isHandset$ | async) {
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      }
+      <span>Productos</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div class="main-container">
+      <router-outlet />
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
