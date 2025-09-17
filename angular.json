@@ -52,8 +52,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/Angular-CRUD2-/products"
-
+              "baseHref": "/Angular-CRUD2/"
             },
             "development": {
               "optimization": false,
